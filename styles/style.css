@@ -8,6 +8,20 @@ html {
   block-size: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
 .page {
   display: flex;
   justify-content: center;
@@ -25,10 +39,9 @@ html {
 .content {
   display: grid;
   grid-template-areas: "result details";
-  max-width: 1140px;
+  grid-template-columns: 711px 399px;
+  width: 1140px;
   gap: 30px;
-  margin-top: 62px;
-  margin-right: 5px;
 }
 
 .result {
@@ -38,7 +51,6 @@ html {
 
 .result__video-container {
   position: relative;
-  inline-size: 711px;
   block-size: 386px;
   margin-block-end: 16px;
 }
@@ -79,7 +91,7 @@ html {
 }
 
 .search-form__label:has(:focus-visible) {
-  outline: 2px solid #ffffff;
+  outline: 1px solid #ffffff;
 }
 
 .visually-hidden {
@@ -102,6 +114,10 @@ html {
   font-size: inherit;
   inline-size: 225px;
   appearance: none;
+}
+
+.search-form__textfield:focus {
+  outline: none;
 }
 
 .search-form__textfield::placeholder {
@@ -132,7 +148,7 @@ html {
 
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-underline-offset: 3px;
 }
 
 .button {
@@ -155,12 +171,12 @@ html {
 }
 
 .button:active {
-  background-color: grey;
+  background-color: #545050;
   text-decoration: none;
 }
 
 .button:focus-visible {
-  outline: 2px solid #ffffff;
+  outline: 1px solid #ffffff;
   outline-offset: 2px;
 }
 
@@ -176,7 +192,7 @@ html {
 }
 
 .title {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   font-size: 75px;
   line-height: 0.94;
   text-transform: uppercase;
@@ -205,22 +221,22 @@ html {
   color: #fff;
 }
 
-.content__card-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 6px;
-}
-
 .content__card-link:focus {
   outline: none;
 }
 
 .content__card-link:focus-visible {
-  outline: 2px solid #ffffff;
+  outline: 1px solid #ffffff;
   outline-offset: 2px;
 }
 
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 1px;
+}
+
 .content__card-link:active {
-  background-color: grey;
+  background-color: #545050;
   text-decoration: none;
 }
 
@@ -231,7 +247,7 @@ html {
 .content__video-card {
   position: relative;
   display: flex;
-  height: 103px;
+  max-height: 103px;
   line-height: 1.2;
   justify-content: flex-start;
 }
@@ -239,6 +255,9 @@ html {
 .content__video-card-description-container {
   flex-grow: 1;
   max-width: 196px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .content__video-card-title {
@@ -247,12 +266,14 @@ html {
   text-overflow: ellipsis;
   font-size: 30px;
   text-transform: uppercase;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
+  line-height: 1;
 }
 
 .content__video-card-description {
   font-weight: 400;
   font-size: 18px;
+  line-height: 0.9;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
@@ -270,20 +291,6 @@ html {
   text-align: center;
   width: 390px;
   margin-top: 30px;
-}
-
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
 }
 
 ul,
